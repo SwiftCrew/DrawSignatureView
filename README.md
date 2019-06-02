@@ -40,6 +40,9 @@ Create a DrawSignatureView through code:
 
 Create a DrawSignatureView interface builder:
 
+![Screenshots](Inspector.png?raw=true "Interface Builder Attributes Inspector panel")
+![Screenshots](importInView.png?raw=true "Interface Builder Custom Class")
+
 
 #### Methods
 
