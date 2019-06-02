@@ -47,8 +47,6 @@ Create a DrawSignatureView interface builder:
 
 Clears signature
 
-* `erase()`
-
       self.drawSignatureView.erase()
 
 #### Callbacks
@@ -77,3 +75,60 @@ Clears signature
             self?.captureSignatureImageView.image = signature.image
           }
         }
+
+#### Example Code
+
+```
+import DrawSignatureView
+
+class ViewController: UIViewController {
+
+@IBOutlet weak private var drawSignatureView: DrawSignatureView!
+@IBOutlet weak private var captureSignatureImageView: UIImageView!
+
+override func viewDidLoad() {
+super.viewDidLoad()
+// Do any additional setup after loading the view.
+
+self.signatureState()
+}
+
+/// Signature State by CallBack
+private func signatureState() {
+self.drawSignatureView.currentTouchState = { [weak self] (touchState) in
+switch touchState {
+case .began:
+print("began")
+case .moved:
+print("moved")
+case .ended:
+print("ended")
+case .none:
+print("none")
+}
+}
+}
+
+/// Clear Signature
+@IBAction func clearSignature(_ sender: UIButton) {
+
+self.captureSignatureImageView.image = nil
+self.drawSignatureView.erase()
+}
+
+/// Capture Siganture
+@IBAction func captureSignature(_ sender: UIButton) {
+
+self.drawSignatureView.captureSignature { [weak self] (signature) in
+if let signature = signature {
+print("Capture Signature: \(signature.image)")
+print("Capture time: \(signature.date)")
+self?.captureSignatureImageView.image = signature.image
+}
+}
+}
+}   
+
+
+```
+
