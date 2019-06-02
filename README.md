@@ -10,3 +10,31 @@ Signature component for iOS written in Swift
 [![Swift 4.0](https://img.shields.io/badge/Swift-5.0-orange.svg?style=flat)](https://developer.apple.com/swift/)
 [![Version](https://img.shields.io/cocoapods/v/DrawSignatureView.svg?style=flat)](https://cocoapods.org/?q=DrawSignatureView)
 
+## Requirements
+* iOS 9.0+
+* Swift 5.0
+
+### Installation
+
+##### [CocoaPods](http://cocoapods.org)
+
+DrawSignatureView is available through CocoaPods. To install it, simply add the following line to your Podfile:
+```ruby
+pod "DrawSignatureView"
+```
+
+## Usage
+
+Using DrawSignatureView is very simple:
+
+### Getting Started:
+
+If you have installed via Cocoapods, you will need to import the module into your Swift file:
+
+import DrawSignatureView
+
+Create a DrawSignatureView either through interface builder, or through code:
+
+let drawSignatureView = DrawSignatureView(frame: frame)
+self.view.addSubview(drawSignatureView)
+
