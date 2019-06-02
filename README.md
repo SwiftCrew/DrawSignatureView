@@ -45,9 +45,11 @@ Clears signature
 
 * `erase()`
 
-#### CallBack
+      self.drawSignatureView.erase()
+
+#### Callbacks
   
-  * you willl get the current touchState
+  * Signature State by Callback
   
          self.drawSignatureView.currentTouchState = { [weak self] (touchState) in
            switch touchState {
@@ -62,3 +64,12 @@ Clears signature
            }
          }
 
+*  Capture Siganture by Callback
+    
+        self.drawSignatureView.captureSignature { [weak self] (signature) in
+          if let signature = signature {
+            print("Capture Signature: \(signature.image)")
+            print("Capture time: \(signature.date)")
+            self?.captureSignatureImageView.image = signature.image
+          }
+        }
