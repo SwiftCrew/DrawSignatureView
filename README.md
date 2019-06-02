@@ -78,57 +78,53 @@ Clears signature
 
 #### Example Code
 
-```
-import DrawSignatureView
+     import DrawSignatureView
 
-class ViewController: UIViewController {
+     class ViewController: UIViewController {
 
-@IBOutlet weak private var drawSignatureView: DrawSignatureView!
-@IBOutlet weak private var captureSignatureImageView: UIImageView!
+       // Connect this Outlet to the DrawSignatureView
+       @IBOutlet weak private var drawSignatureView: DrawSignatureView!
+       @IBOutlet weak private var captureSignatureImageView: UIImageView!
 
-override func viewDidLoad() {
-super.viewDidLoad()
-// Do any additional setup after loading the view.
+       override func viewDidLoad() {
+         super.viewDidLoad()
+         // Do any additional setup after loading the view.
+         self.signatureState()
+       }
 
-self.signatureState()
-}
+       /// Signature State by CallBack
+       private func signatureState() {
+         self.drawSignatureView.currentTouchState = { [weak self] (touchState) in
+           switch touchState {
+           case .began:
+             print("began")
+           case .moved:
+             print("moved")
+           case .ended:
+             print("ended")
+           case .none:
+             print("none")
+           }
+         }
+       }
 
-/// Signature State by CallBack
-private func signatureState() {
-self.drawSignatureView.currentTouchState = { [weak self] (touchState) in
-switch touchState {
-case .began:
-print("began")
-case .moved:
-print("moved")
-case .ended:
-print("ended")
-case .none:
-print("none")
-}
-}
-}
+       /// Clear Signature
+       @IBAction func clearSignature(_ sender: UIButton) {
 
-/// Clear Signature
-@IBAction func clearSignature(_ sender: UIButton) {
+         self.captureSignatureImageView.image = nil
+         self.drawSignatureView.erase()
+       }
 
-self.captureSignatureImageView.image = nil
-self.drawSignatureView.erase()
-}
+       /// Capture Siganture
+       @IBAction func captureSignature(_ sender: UIButton) {
 
-/// Capture Siganture
-@IBAction func captureSignature(_ sender: UIButton) {
-
-self.drawSignatureView.captureSignature { [weak self] (signature) in
-if let signature = signature {
-print("Capture Signature: \(signature.image)")
-print("Capture time: \(signature.date)")
-self?.captureSignatureImageView.image = signature.image
-}
-}
-}
-}   
-
-
-```
+         self.drawSignatureView.captureSignature { [weak self] (signature) in
+           if let signature = signature {
+            print("Capture Signature: \(signature.image)")
+            print("Capture time: \(signature.date)")
+            self?.captureSignatureImageView.image = signature.image
+           }
+          }
+        }
+      }   
 
