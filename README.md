@@ -31,10 +31,34 @@ Using DrawSignatureView is very simple:
 
 If you have installed via Cocoapods, you will need to import the module into your Swift file:
 
-import DrawSignatureView
+    import DrawSignatureView
 
 Create a DrawSignatureView either through interface builder, or through code:
 
-let drawSignatureView = DrawSignatureView(frame: frame)
-self.view.addSubview(drawSignatureView)
+    let drawSignatureView = DrawSignatureView(frame: frame)
+    self.view.addSubview(drawSignatureView)
+
+
+#### Methods
+
+Clears signature
+
+* `erase()`
+
+#### CallBack
+  
+  * you willl get the current touchState
+  
+         self.drawSignatureView.currentTouchState = { [weak self] (touchState) in
+           switch touchState {
+           case .began:
+             print("began")
+           case .moved:
+             print("moved")
+           case .ended:
+             print("ended")
+           case .none:
+             print("none")
+           }
+         }
 
