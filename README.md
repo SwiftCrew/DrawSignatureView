@@ -40,8 +40,8 @@ Create a DrawSignatureView through code:
 
 Create a DrawSignatureView interface builder:
 
-![](Screenshots/nspector.png)   
-
+  <img src="Screenshots/Inspector.png">
+  <img src="Screenshots/importInView.png">
 
 #### Methods
 
