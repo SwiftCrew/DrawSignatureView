@@ -4,7 +4,7 @@ DrawSignatureView is a simple, light-weight drawing framework written in Swift. 
 
 # DrawSignatureView
 
-Signature component for iOS written in Swift
+Signature/Drawing component for iOS written in Swift
 
 [![Platform](https://img.shields.io/cocoapods/p/DrawSignatureView.svg?style=flat)](http://cocoapods.org/pods/DrawSignatureView)
 [![Swift 4.0](https://img.shields.io/badge/Swift-5.0-orange.svg?style=flat)](https://developer.apple.com/swift/)
