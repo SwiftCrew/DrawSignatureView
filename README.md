@@ -33,10 +33,12 @@ If you have installed via Cocoapods, you will need to import the module into you
 
     import DrawSignatureView
 
-Create a DrawSignatureView either through interface builder, or through code:
+Create a DrawSignatureView through code:
 
     let drawSignatureView = DrawSignatureView(frame: frame)
     self.view.addSubview(drawSignatureView)
+
+Create a DrawSignatureView interface builder:
 
 
 #### Methods
