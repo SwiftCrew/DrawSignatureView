@@ -40,8 +40,7 @@ Create a DrawSignatureView through code:
 
 Create a DrawSignatureView interface builder:
 
-![Screenshots](https://raw.githubusercontent.com/ipraba/DrawSignatureView/master/Screenshots/Inspector.png)   
-![Screenshots](https://raw.githubusercontent.com/ipraba/DrawSignatureView/master/Screenshots/importInView.png)
+![](Screenshots/nspector.png)   
 
 
 #### Methods
