@@ -40,8 +40,8 @@ Create a DrawSignatureView through code:
 
 Create a DrawSignatureView interface builder:
 
-![Screenshots]https://github.com/Tahir91/DrawSignatureView/blob/master/Screenshots/Inspector.png
-![Screenshots]https://github.com/Tahir91/DrawSignatureView/blob/master/Screenshots/importInView.png
+![Screenshots] (https://github.com/Tahir91/DrawSignatureView/blob/master/Screenshots/Inspector.png)
+![Screenshots] (https://github.com/Tahir91/DrawSignatureView/blob/master/Screenshots/importInView.png)
 
 
 #### Methods
